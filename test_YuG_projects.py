@@ -1,4 +1,3 @@
-from wsgiref import headers
 import requests
 
 base_url = 'https://yougile.com/'
@@ -37,4 +36,5 @@ def test_get_project_positive():
 
 def test_get_project_negative():
     resp = requests.get(f"{base_url}api-v2/projects/123", headers=HEADERS)
+
     assert resp.status_code == 404
